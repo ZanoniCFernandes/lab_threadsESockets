@@ -1,0 +1,19 @@
+public class Consumidor extends Tipo {
+    public Consumidor(String porta, String nome) {
+        super(porta, nome);
+    }
+
+    public void run() {
+        while (true) {
+            try {
+                System.out.println("Vou dormir!");
+                Thread.sleep(1000*60);
+                System.out.println("Acordei!");
+                Thread.sleep(1000*60);
+            } catch (InterruptedException e) {
+                Logger.getLogger(MultiPrograma.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+    }
+
+}
